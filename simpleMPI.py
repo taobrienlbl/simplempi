@@ -74,7 +74,10 @@ class simpleMPI:
             #If this is the root processor, divide the list as evenly as possible among processors
             # _divideListForScattering() returns a list of lists, with `mpisize` lists in the top level list
             if self.rank == 0:
-                scatterableList = self._divideListForScattering(inlist)
+                try:
+                    scatterableList = self._divideListForScattering(inlist)
+                except:
+                    scatterableList = self._divideDictForScattering(inlist)
             else:
                 scatterableList = None
 
@@ -106,6 +109,26 @@ class simpleMPI:
         #Return the list
         return outlist
 
+    def _divideDictForScattering(self,indict):
+        """returns a list of dicts, with `self.mpisize` lists in the top level list"""
+
+        #Create a list that explicitly has the proper size
+        outlist = [ {} for i in range(self.mpisize) ]
+
+        n = 0
+        #Go through each item in the input list and append it to the output list
+        #Cycle through the indices of the output list so that they input list is
+        #dividided as evenly as possible
+        for item in indict:
+            outlist[n][item] = indict[item]
+            n = n + 1
+            if(n >= self.mpisize):
+                n = 0
+
+        #Return the list
+        return outlist
+
+
     def pprint(self,message):
         """Does a parallel-friendly print (with information about the printing processor)"""
         print("(rank {}/{}): {}".format(self.rank+1,self.mpisize,message))
@@ -125,4 +148,13 @@ if __name__ == "__main__":
     #Print the list contents (as well as the rank of the printing process)
     smpi.pprint(myList)
 
+
+    #Test scattering a dict object
+    testDict = {"a" : 1, "b" : 10, "c" : "a string"}
+
+    #Scatter the dict
+    myDict = smpi.scatterList(testDict)
+
+    #Print the dict contents and the rank
+    smpi.pprint(myDict)
 
