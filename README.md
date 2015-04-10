@@ -1,6 +1,6 @@
 # README #
 
-A simple wrapper around mpi4py that offers simple scattering of a list of objects.
+A simple wrapper around mpi4py that offers simple scattering of a list (or dict) of objects.
 
 This is useful for embarassingly parallel, SPMD, type tasks that simply need to work on a list of things.
 
