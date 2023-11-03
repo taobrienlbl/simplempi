@@ -9,6 +9,8 @@ dependencies = [
 dev = [
     "pytest",
     "black",
+    "sphinx",
+    "sphinx_rtd_theme",
 ]
 
 [build-system]
