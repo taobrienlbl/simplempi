@@ -1,5 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/simplempi.svg)](https://badge.fury.io/py/simplempi)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/taobrienlbl/simplempi/main.yml?branch=main)
+![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/taobrienlbl/simplempi/main.yml?event=push&label=tests)
+
 
 A wrapper around mpi4py that offers simple scattering of iterable objects.
 
@@ -48,10 +49,10 @@ Alternatively, one can use the object-oriented interface:
 
 `simpleMPI_test.py`
 ```python
-import simpleMPI
+import simplempi
 
 #Initialize MPI 
-smpi = simpleMPI.simpleMPI()
+smpi = simplempi.simpleMPI()
 
 #Make a list of things (20 numbers in this case)
 testList = range(20)
