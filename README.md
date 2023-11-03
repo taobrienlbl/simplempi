@@ -1,4 +1,5 @@
-# README #
+[![PyPI version](https://badge.fury.io/py/simplempi.svg)](https://badge.fury.io/py/simplempi)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/taobrienlbl/simplempi/main.yml?branch=main)
 
 A wrapper around mpi4py that offers simple scattering of iterable objects.
 
@@ -75,3 +76,6 @@ $ mpirun -n 6 python simpleMPI_test.py
 (rank 3/6): [2, 8, 14]
 
 ```
+
+# Install
+`python3 -m pip install simplempi`

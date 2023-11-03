@@ -9,7 +9,7 @@ on:
     types: [published]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
     strategy:
@@ -43,7 +43,7 @@ jobs:
         pytest
 
   publish:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     if: github.event_name == 'release' && github.event.action == 'published'
     steps:
