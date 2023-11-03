@@ -1,0 +1,19 @@
+[project]
+name = "simplempi"
+version = "0.1.0"
+dependencies = [
+    "mpi4py",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[tool.black]
+line-length = 80
+target-version = ['py37']
