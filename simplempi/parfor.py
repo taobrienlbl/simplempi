@@ -8,7 +8,7 @@ Example usage:
 from simplempi.parfor import parfor
 
 # define a list to loop over
-my_list = list(range(100)) 
+my_list = list(range(10)) 
 
 # define a function that does something with each item in my_list
 def func(i):
@@ -25,3 +25,6 @@ smpi = simplempi.simpleMPI()
 
 # export the parfor function
 parfor = smpi.parfor
+
+# export the pprint function
+pprint = smpi.pprint
