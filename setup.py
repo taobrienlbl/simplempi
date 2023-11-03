@@ -4,6 +4,8 @@ setup(
     name="simplempi",
     version="0.1.0",
     description="A wrapper around mpi4py that offers simple scattering of iterable objects.",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
     author="Travis A. O'Brien",
     author_email="obrienta@iu.edu",
     url="https://github.com/taobrienlbl/simplempi",
