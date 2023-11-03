@@ -13,6 +13,7 @@ setup(
     install_requires=[
         "mpi4py",
     ],
+    license="BSD-3-Clause",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
