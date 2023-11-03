@@ -99,6 +99,10 @@ class simpleMPI:
         # Return this processor's list
         return myList
 
+    def scatterList(self, iterable):
+        """Scatter a list of objects to all participating processors."""
+        return self.scatter(iterable)
+
     def parfor(self, iterable):
         """A wrapper around simpleMPI.scatter() designed to be used in a loop
 
