@@ -4,6 +4,7 @@ version = "0.1.4"
 dependencies = [
     "mpi4py",
 ]
+dynamic = ["authors","license","classifiers","readme"]
 
 [project.optional-dependencies]
 dev = [
