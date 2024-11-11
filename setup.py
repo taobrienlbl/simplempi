@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="simplempi",
-    version='0.1.4',
+    version='0.1.5',
     description="A wrapper around mpi4py that offers simple scattering of iterable objects.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
